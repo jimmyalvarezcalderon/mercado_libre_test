@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mercado_libre_main_navigation"
+    app:startDestination="@id/productSearchFragment">
+
+    <fragment
+        android:id="@+id/productSearchFragment"
+        android:name="com.project.mercado_libre_test.view.products.ProductSearchFragment"
+        android:label="Product Search"
+        tools:layout="@layout/fragment_product_search">
+        <action
+            android:id="@+id/action_productSearchFragment_to_productDetail"
+            app:destination="@id/productDetail">
+            <argument
+                android:name="product"
+                app:argType="com.project.mercado_libre_test.services.api.products.model.Product" />
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/productDetail"
+        android:name="com.project.mercado_libre_test.view.products.ProductDetail"
+        android:label="Detail"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="product"
+            app:argType="com.project.mercado_libre_test.services.api.products.model.Product" />
+    </fragment>
+</navigation>
